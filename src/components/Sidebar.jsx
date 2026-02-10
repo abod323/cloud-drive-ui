@@ -144,14 +144,24 @@ const Sidebar = () => {
 
         {/* Quick Actions */}
         <div className="mt-6 space-y-2">
-          <button className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 ${
-            isDarkMode 
-              ? 'text-gray-300 hover:bg-gray-700' 
-              : 'text-gray-700 hover:bg-gray-100'
-          }`}>
-            <span className="text-lg">⚙️</span>
-            <span className="font-medium">Settings</span>
-          </button>
+        <button 
+          onClick={() => {
+            setCurrentView('settings');
+            setCurrentPath(['Settings']);
+          }}
+          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 ${
+            currentView === 'settings'
+              ? isDarkMode
+                ? 'bg-primary-900 text-primary-300'
+                : 'bg-primary-50 text-primary-700'
+              : isDarkMode 
+                ? 'text-gray-300 hover:bg-gray-700' 
+                : 'text-gray-700 hover:bg-gray-100'
+          }`}
+        >
+          <span className="text-lg">⚙️</span>
+          <span className="font-medium">Settings</span>
+        </button>
           <button className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 ${
             isDarkMode 
               ? 'text-gray-300 hover:bg-gray-700' 

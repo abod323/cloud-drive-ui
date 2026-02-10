@@ -16,8 +16,8 @@ export const FileProvider = ({ children }) => {
   const [files, setFiles] = useState(mockFiles);
   const [selectedItems, setSelectedItems] = useState([]);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
-  const [currentPath, setCurrentPath] = useState(['Drive', 'Projects', 'UI']);
-  const [currentView, setCurrentView] = useState('my-drive'); // 'my-drive', 'recent', 'shared', 'starred', 'trash'
+  const [currentPath, setCurrentPath] = useState(['Drive']);
+  const [currentView, setCurrentView] = useState('my-drive'); // 'my-drive', 'recent', 'shared', 'starred', 'trash', 'settings'
   const [sortBy, setSortBy] = useState('name'); // 'name', 'date', 'size', 'type'
   const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
   const [filterType, setFilterType] = useState('all'); // 'all', 'folders', 'files', 'pdf', 'image', etc.

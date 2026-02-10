@@ -5,7 +5,8 @@ import {
   MainContent, 
   ContextMenu, 
   Modal,
-  LoadingSkeleton 
+  LoadingSkeleton,
+  Settings
 } from './components';
 import { FileProvider, useFileContext } from './context/FileContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
@@ -16,7 +17,7 @@ import './App.css';
 const AppContent = () => {
   const [contextMenu, setContextMenu] = useState(null);
   const [modal, setModal] = useState({ isOpen: false, type: '', data: null });
-  const { addFile } = useFileContext();
+  const { addFile, currentView } = useFileContext();
   const { isDarkMode } = useTheme();
 
   const handleFilesDrop = (files) => {
@@ -112,11 +113,15 @@ const AppContent = () => {
             {/* Header */}
             <Header openModal={openModal} />
             
-            {/* Main Content */}
-            <MainContent 
-              onContextMenu={handleContextMenu}
-              openModal={openModal}
-            />
+            {/* Main Content or Settings */}
+            {currentView === 'settings' ? (
+              <Settings />
+            ) : (
+              <MainContent 
+                onContextMenu={handleContextMenu}
+                openModal={openModal}
+              />
+            )}
           </div>
         </div>
 

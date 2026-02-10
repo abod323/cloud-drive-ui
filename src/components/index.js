@@ -9,3 +9,4 @@ export { default as FileListItem } from './FileListItem';
 export { default as ContextMenu } from './ContextMenu';
 export { default as Modal } from './Modal';
 export { default as LoadingSkeleton } from './LoadingSkeleton';
+export { default as Settings } from './Settings';
